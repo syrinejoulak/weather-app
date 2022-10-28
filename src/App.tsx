@@ -9,7 +9,7 @@ function App() {
       <TemperatureSwitcher />
       <SearchBox />
       <Temperature />
-      {/* <ForcastSwiper /> */}
+      <ForcastSwiper />
     </div>
   );
 }

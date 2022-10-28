@@ -1,0 +1,271 @@
+.forcast-cards-container {
+  margin: 0 50px;
+
+  .forcast-card {
+    position: relative;
+    width: 200px;
+    height: 340px;
+    margin: auto;
+
+    .card-bg {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 6.5em 1em;
+      display: block;
+      border-radius: 10px;
+
+      &:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50%;
+      }
+    }
+
+    //night
+    .card-night {
+      background-color: #000;
+
+      .night {
+        -moz-animation: night-stars 5s ease-in-out infinite;
+        -webkit-animation: night-stars 5s ease-in-out infinite;
+        animation: night-stars 5s ease-in-out infinite;
+        background-color: #ffffff;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        -moz-box-shadow: #fff 26px 7px 0 -1px,
+          rgba(255, 255, 255, 0.1) -36px -19px 0 -1px,
+          rgba(255, 255, 255, 0.1) -51px -34px 0 -1px, #fff -52px -62px 0 -1px,
+          #fff 14px -37px, rgba(255, 255, 255, 0.1) 41px -19px, #fff 34px -50px,
+          rgba(255, 255, 255, 0.1) 14px -71px 0 -1px, #fff 64px -21px 0 -1px,
+          rgba(255, 255, 255, 0.1) 32px -85px 0 -1px, #fff 64px -90px,
+          rgba(255, 255, 255, 0.1) 60px -67px 0 -1px, #fff 34px -127px,
+          rgba(255, 255, 255, 0.1) -26px -103px 0 -1px;
+        -webkit-box-shadow: #fff 26px 7px 0 -1px,
+          rgba(255, 255, 255, 0.1) -36px -19px 0 -1px,
+          rgba(255, 255, 255, 0.1) -51px -34px 0 -1px, #fff -52px -62px 0 -1px,
+          #fff 14px -37px, rgba(255, 255, 255, 0.1) 41px -19px, #fff 34px -50px,
+          rgba(255, 255, 255, 0.1) 14px -71px 0 -1px, #fff 64px -21px 0 -1px,
+          rgba(255, 255, 255, 0.1) 32px -85px 0 -1px, #fff 64px -90px,
+          rgba(255, 255, 255, 0.1) 60px -67px 0 -1px, #fff 34px -127px,
+          rgba(255, 255, 255, 0.1) -26px -103px 0 -1px;
+        box-shadow: #fff 26px 7px 0 -1px,
+          rgba(255, 255, 255, 0.1) -36px -19px 0 -1px,
+          rgba(255, 255, 255, 0.1) -51px -34px 0 -1px, #fff -52px -62px 0 -1px,
+          #fff 14px -37px, rgba(255, 255, 255, 0.1) 41px -19px, #fff 34px -50px,
+          rgba(255, 255, 255, 0.1) 14px -71px 0 -1px, #fff 64px -21px 0 -1px,
+          rgba(255, 255, 255, 0.1) 32px -85px 0 -1px, #fff 64px -90px,
+          rgba(255, 255, 255, 0.1) 60px -67px 0 -1px, #fff 34px -127px,
+          rgba(255, 255, 255, 0.1) -26px -103px 0 -1px;
+        height: 4px;
+        width: 4px;
+        opacity: 1;
+        position: absolute;
+        left: 90px;
+        top: 155px;
+
+        &:after {
+          -moz-animation: night-moon 9s ease-in-out infinite;
+          -webkit-animation: night-moon 9s ease-in-out infinite;
+          animation: night-moon 9s ease-in-out infinite;
+          -moz-border-radius: 50%;
+          -webkit-border-radius: 50%;
+          border-radius: 50%;
+          -moz-box-shadow: rgba(0, 0, 0, 0.2) -5px 0 0;
+          -webkit-box-shadow: rgba(0, 0, 0, 0.2) -5px 0 0;
+          box-shadow: rgba(0, 0, 0, 0.2) -5px 0 0;
+          content: '';
+          height: 100px;
+          width: 100px;
+          position: absolute;
+          top: -106px;
+          -moz-transform: rotate(-5deg);
+          -ms-transform: rotate(-5deg);
+          -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+          -moz-transform-origin: 0 50% 50%;
+          -ms-transform-origin: 0 50% 50%;
+          -webkit-transform-origin: 0 50% 50%;
+          transform-origin: 0 50% 50%;
+        }
+
+        &:before {
+          -moz-animation: night-moon 9s ease-in-out infinite;
+          -webkit-animation: night-moon 9s ease-in-out infinite;
+          animation: night-moon 9s ease-in-out infinite;
+          -moz-border-radius: 50%;
+          -webkit-border-radius: 50%;
+          border-radius: 50%;
+          -moz-box-shadow: #fff -35px 0;
+          -webkit-box-shadow: #fff -35px 0;
+          box-shadow: #fff -35px 0;
+          content: '';
+          height: 100px;
+          width: 100px;
+          position: absolute;
+          top: -106px;
+          -moz-transform: rotate(-5deg);
+          -ms-transform: rotate(-5deg);
+          -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+          -moz-transform-origin: 0 50% 50%;
+          -ms-transform-origin: 0 50% 50%;
+          -webkit-transform-origin: 0 50% 50%;
+          transform-origin: 0 50% 50%;
+        }
+      }
+
+      @-moz-keyframes night-moon {
+        50% {
+          -moz-transform: rotate(10deg);
+          transform: rotate(10deg);
+        }
+      }
+
+      @-webkit-keyframes night-moon {
+        50% {
+          -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+        }
+      }
+
+      @keyframes night-moon {
+        50% {
+          -moz-transform: rotate(10deg);
+          -ms-transform: rotate(10deg);
+          -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+        }
+      }
+
+      @-moz-keyframes night-stars {
+        50% {
+          -moz-box-shadow: rgba(255, 255, 255, 0.1) 26px 7px 0 -1px,
+            #ffffff -36px -19px 0 -1px, #ffffff -51px -34px 0 -1px,
+            rgba(255, 255, 255, 0.1) -52px -62px 0 -1px,
+            rgba(255, 255, 255, 0.1) 14px -37px, #ffffff 41px -19px,
+            rgba(255, 255, 255, 0.1) 34px -50px, #ffffff 14px -71px 0 -1px,
+            rgba(255, 255, 255, 0.1) 64px -21px 0 -1px,
+            #ffffff 32px -85px 0 -1px, rgba(255, 255, 255, 0.1) 64px -90px,
+            #ffffff 60px -67px 0 -1px, rgba(255, 255, 255, 0.1) 34px -127px,
+            #ffffff -26px -103px 0 -1px;
+          box-shadow: rgba(255, 255, 255, 0.1) 26px 7px 0 -1px,
+            #ffffff -36px -19px 0 -1px, #ffffff -51px -34px 0 -1px,
+            rgba(255, 255, 255, 0.1) -52px -62px 0 -1px,
+            rgba(255, 255, 255, 0.1) 14px -37px, #ffffff 41px -19px,
+            rgba(255, 255, 255, 0.1) 34px -50px, #ffffff 14px -71px 0 -1px,
+            rgba(255, 255, 255, 0.1) 64px -21px 0 -1px,
+            #ffffff 32px -85px 0 -1px, rgba(255, 255, 255, 0.1) 64px -90px,
+            #ffffff 60px -67px 0 -1px, rgba(255, 255, 255, 0.1) 34px -127px,
+            #ffffff -26px -103px 0 -1px;
+        }
+      }
+
+      @-webkit-keyframes night-stars {
+        50% {
+          -webkit-box-shadow: rgba(255, 255, 255, 0.1) 26px 7px 0 -1px,
+            #ffffff -36px -19px 0 -1px, #ffffff -51px -34px 0 -1px,
+            rgba(255, 255, 255, 0.1) -52px -62px 0 -1px,
+            rgba(255, 255, 255, 0.1) 14px -37px, #ffffff 41px -19px,
+            rgba(255, 255, 255, 0.1) 34px -50px, #ffffff 14px -71px 0 -1px,
+            rgba(255, 255, 255, 0.1) 64px -21px 0 -1px,
+            #ffffff 32px -85px 0 -1px, rgba(255, 255, 255, 0.1) 64px -90px,
+            #ffffff 60px -67px 0 -1px, rgba(255, 255, 255, 0.1) 34px -127px,
+            #ffffff -26px -103px 0 -1px;
+          box-shadow: rgba(255, 255, 255, 0.1) 26px 7px 0 -1px,
+            #ffffff -36px -19px 0 -1px, #ffffff -51px -34px 0 -1px,
+            rgba(255, 255, 255, 0.1) -52px -62px 0 -1px,
+            rgba(255, 255, 255, 0.1) 14px -37px, #ffffff 41px -19px,
+            rgba(255, 255, 255, 0.1) 34px -50px, #ffffff 14px -71px 0 -1px,
+            rgba(255, 255, 255, 0.1) 64px -21px 0 -1px,
+            #ffffff 32px -85px 0 -1px, rgba(255, 255, 255, 0.1) 64px -90px,
+            #ffffff 60px -67px 0 -1px, rgba(255, 255, 255, 0.1) 34px -127px,
+            #ffffff -26px -103px 0 -1px;
+        }
+      }
+
+      @keyframes night-stars {
+        50% {
+          -moz-box-shadow: rgba(255, 255, 255, 0.1) 26px 7px 0 -1px,
+            #ffffff -36px -19px 0 -1px, #ffffff -51px -34px 0 -1px,
+            rgba(255, 255, 255, 0.1) -52px -62px 0 -1px,
+            rgba(255, 255, 255, 0.1) 14px -37px, #ffffff 41px -19px,
+            rgba(255, 255, 255, 0.1) 34px -50px, #ffffff 14px -71px 0 -1px,
+            rgba(255, 255, 255, 0.1) 64px -21px 0 -1px,
+            #ffffff 32px -85px 0 -1px, rgba(255, 255, 255, 0.1) 64px -90px,
+            #ffffff 60px -67px 0 -1px, rgba(255, 255, 255, 0.1) 34px -127px,
+            #ffffff -26px -103px 0 -1px;
+          -webkit-box-shadow: rgba(255, 255, 255, 0.1) 26px 7px 0 -1px,
+            #ffffff -36px -19px 0 -1px, #ffffff -51px -34px 0 -1px,
+            rgba(255, 255, 255, 0.1) -52px -62px 0 -1px,
+            rgba(255, 255, 255, 0.1) 14px -37px, #ffffff 41px -19px,
+            rgba(255, 255, 255, 0.1) 34px -50px, #ffffff 14px -71px 0 -1px,
+            rgba(255, 255, 255, 0.1) 64px -21px 0 -1px,
+            #ffffff 32px -85px 0 -1px, rgba(255, 255, 255, 0.1) 64px -90px,
+            #ffffff 60px -67px 0 -1px, rgba(255, 255, 255, 0.1) 34px -127px,
+            #ffffff -26px -103px 0 -1px;
+          box-shadow: rgba(255, 255, 255, 0.1) 26px 7px 0 -1px,
+            #ffffff -36px -19px 0 -1px, #ffffff -51px -34px 0 -1px,
+            rgba(255, 255, 255, 0.1) -52px -62px 0 -1px,
+            rgba(255, 255, 255, 0.1) 14px -37px, #ffffff 41px -19px,
+            rgba(255, 255, 255, 0.1) 34px -50px, #ffffff 14px -71px 0 -1px,
+            rgba(255, 255, 255, 0.1) 64px -21px 0 -1px,
+            #ffffff 32px -85px 0 -1px, rgba(255, 255, 255, 0.1) 64px -90px,
+            #ffffff 60px -67px 0 -1px, rgba(255, 255, 255, 0.1) 34px -127px,
+            #ffffff -26px -103px 0 -1px;
+        }
+      }
+    }
+
+    .details-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      color: white;
+
+      .caracteristics {
+        width: 200px;
+        padding: 0 15px;
+        display: flex;
+        justify-content: space-between;
+
+        .details {
+          text-align: center;
+
+          div {
+            font-family: 'Roboto Bold';
+            font-size: 20px;
+          }
+
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+
+      .weather-description {
+        font-family: 'Roboto Italic';
+        text-align: center;
+        padding: 20px 15px 15px 15px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.card-rain {
+  background-color: #41ba9c;
+}
+.card-snow {
+  background-color: #ccd1d9;
+}
+.card-storm {
+  background-color: #656d78;
+}
+.card-sunny {
+  background-color: #4fc1e9;
+}
