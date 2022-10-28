@@ -10,6 +10,7 @@ const ForcastSwiper = () => {
       <ForcastCard weather="snow" description="Light flurry" />
       <ForcastCard weather="storm" description="Thunderstorms" />
       <ForcastCard weather="sunny" description="Mostly sunny" />
+      <ForcastCard weather="cloud" description="Mostly cloudy" />
     </div>
   );
 };
