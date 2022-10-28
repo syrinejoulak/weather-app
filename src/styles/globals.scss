@@ -1,0 +1,40 @@
+// @import './mixins';
+@import './fonts';
+@import './variable';
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  background-color: var(--white-smoke);
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.alert_text {
+  color: #df3737;
+}
+
+input,
+select {
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
