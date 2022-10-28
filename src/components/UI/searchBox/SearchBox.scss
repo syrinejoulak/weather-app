@@ -9,20 +9,21 @@
     height: 100%;
     border-radius: 120px;
     padding: 20px;
-    font-size: 26px;
-    background-color: white;
-    border: 3px solid var(--white-smoke);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 0px 0px 0px inset,
-      rgba(0, 0, 0, 0.3) 0px 0px 15px 0px inset;
+    font-size: 28px;
+    background-color: var(--white-smoke);
+    border: transparent;
+    box-shadow: none;
+    color: dimgrey;
 
     transition: background-color 0.5s, border 0.5s, font-size 0.5s,
       box-shadow 0.5s;
 
     &:focus {
-      font-size: 28px;
-      background-color: var(--white-smoke);
-      border: transparent;
-      box-shadow: none;
+      font-size: 26px;
+      background-color: white;
+      border: 3px solid var(--white-smoke);
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 0px 0px 0px inset,
+        rgba(0, 0, 0, 0.3) 0px 0px 7px 0px inset;
 
       transition: background-color 0.5s, border 0.5s, font-size 0.5s,
         box-shadow 0.5s;

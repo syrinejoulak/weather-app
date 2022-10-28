@@ -1,5 +1,11 @@
+import ForcastCard from './ForcastCard';
+
 const ForcastSwiper = () => {
-  return <div>ForcastSwiper</div>;
+  return (
+    <div>
+      <ForcastCard />
+    </div>
+  );
 };
 
 export default ForcastSwiper;
