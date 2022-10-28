@@ -8,8 +8,8 @@ const ForcastSwiper = () => {
       <ForcastCard weather="night" description="Clear skies" />
       <ForcastCard weather="rain" description="Showers" />
       <ForcastCard weather="snow" description="Light flurry" />
-      <ForcastCard weather="night" description="Clear skies" />
-      <ForcastCard weather="night" description="Clear skies" />
+      <ForcastCard weather="storm" description="Thunderstorms" />
+      <ForcastCard weather="sunny" description="Mostly sunny" />
     </div>
   );
 };
