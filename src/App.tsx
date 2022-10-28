@@ -1,11 +1,13 @@
 import ForcastSwiper from './components/forcastSwiper';
 import TemperatureSwitcher from './components/temperatureSwitcher';
+import SearchBox from './components/UI/searchBox/SearchBox';
 
 function App() {
   return (
     <div>
       <TemperatureSwitcher />
-      <ForcastSwiper />
+      <SearchBox />
+      {/* <ForcastSwiper /> */}
     </div>
   );
 }

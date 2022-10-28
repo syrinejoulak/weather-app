@@ -1,10 +1,9 @@
-@import '../../styles//variable';
-
 .temperature-switcher {
-  margin: 50px 0;
+  margin: 50px auto;
   border-radius: 500px;
   background: var(--light-grey);
   box-shadow: 5px 10px 18px var(--silver);
+  width: 121px;
 
   .toggle {
     display: flex;
@@ -25,7 +24,7 @@
       border-radius: 500px;
       background: linear-gradient(var(--dark-grey), var(--silver));
 
-      input {
+      .checkbox {
         opacity: 0;
         width: 0;
         height: 0;

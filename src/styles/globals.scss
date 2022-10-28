@@ -3,16 +3,13 @@
 @import './variable';
 
 body {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--white-smoke);
+  font-family: 'Roboto';
 }
 
 * {
   margin: 0;
   padding: 0;
-  background-color: var(--white-smoke);
   box-sizing: border-box;
 }
 
@@ -27,9 +24,11 @@ ul {
 input,
 select {
   border: none;
+  font-family: 'Roboto';
 
   &:focus {
     outline: none;
+    border: transparent;
   }
 }
 
