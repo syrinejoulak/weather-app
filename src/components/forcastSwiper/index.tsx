@@ -7,7 +7,7 @@ const ForcastSwiper = () => {
     <div className="forcast-cards-container">
       <ForcastCard weather="night" description="Clear skies" />
       <ForcastCard weather="rain" description="Showers" />
-      <ForcastCard weather="night" description="Clear skies" />
+      <ForcastCard weather="snow" description="Light flurry" />
       <ForcastCard weather="night" description="Clear skies" />
       <ForcastCard weather="night" description="Clear skies" />
     </div>
