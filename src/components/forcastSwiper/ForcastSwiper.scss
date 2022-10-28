@@ -1,11 +1,15 @@
 .forcast-cards-container {
-  margin: 0 50px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  //to change
+  display: flex;
 
   .forcast-card {
     position: relative;
     width: 200px;
     height: 340px;
     margin: auto;
+    border-radius: 10px;
 
     .card-bg {
       position: relative;
@@ -217,6 +221,356 @@
             #ffffff 32px -85px 0 -1px, rgba(255, 255, 255, 0.1) 64px -90px,
             #ffffff 60px -67px 0 -1px, rgba(255, 255, 255, 0.1) 34px -127px,
             #ffffff -26px -103px 0 -1px;
+        }
+      }
+    }
+
+    //rain
+    .rain {
+      -moz-animation: rain 5s ease-in-out infinite;
+      -webkit-animation: rain 5s ease-in-out infinite;
+      animation: rain 5s ease-in-out infinite;
+      background: #ccc;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      -moz-box-shadow: #ccc 65px -25px 0 -5px, #ccc 25px -25px, #ccc 5px 0 0 2px,
+        #ccc 10px 0 0 2px, #ccc 15px 0 0 2px, #ccc 20px 0 0 2px,
+        #ccc 25px 0 0 2px, #ccc 30px 0 0 2px, #ccc 35px 0 0 2px,
+        #ccc 40px 0 0 2px, #ccc 45px 0 0 2px, #ccc 50px 0 0 2px,
+        #ccc 55px 0 0 2px, #ccc 60px 0 0 2px, #ccc 65px 0 0 2px,
+        #ccc 70px 0 0 2px, #ccc 75px 0 0 2px;
+      -webkit-box-shadow: #ccc 65px -25px 0 -5px, #ccc 25px -25px,
+        #ccc 5px 0 0 2px, #ccc 10px 0 0 2px, #ccc 15px 0 0 2px,
+        #ccc 20px 0 0 2px, #ccc 25px 0 0 2px, #ccc 30px 0 0 2px,
+        #ccc 35px 0 0 2px, #ccc 40px 0 0 2px, #ccc 45px 0 0 2px,
+        #ccc 50px 0 0 2px, #ccc 55px 0 0 2px, #ccc 60px 0 0 2px,
+        #ccc 65px 0 0 2px, #ccc 70px 0 0 2px, #ccc 75px 0 0 2px;
+      box-shadow: #ccc 65px -25px 0 -5px, #ccc 25px -25px, #ccc 5px 0 0 2px,
+        #ccc 10px 0 0 2px, #ccc 15px 0 0 2px, #ccc 20px 0 0 2px,
+        #ccc 25px 0 0 2px, #ccc 30px 0 0 2px, #ccc 35px 0 0 2px,
+        #ccc 40px 0 0 2px, #ccc 45px 0 0 2px, #ccc 50px 0 0 2px,
+        #ccc 55px 0 0 2px, #ccc 60px 0 0 2px, #ccc 65px 0 0 2px,
+        #ccc 70px 0 0 2px, #ccc 75px 0 0 2px;
+      display: block;
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      left: 40px;
+      top: 80px;
+
+      &:after {
+        -moz-animation: rain-shadow 5s ease-in-out infinite;
+        -webkit-animation: rain-shadow 5s ease-in-out infinite;
+        animation: rain-shadow 5s ease-in-out infinite;
+        background: #000;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        content: '';
+        height: 15px;
+        width: 120px;
+        opacity: 0.2;
+        position: absolute;
+        left: 5px;
+        bottom: -60px;
+        -moz-transform: scale(0.7);
+        -ms-transform: scale(0.7);
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7);
+      }
+
+      &:before {
+        -moz-animation: rain-drop 0.7s infinite linear;
+        -webkit-animation: rain-drop 0.7s infinite linear;
+        animation: rain-drop 0.7s infinite linear;
+        content: '';
+        background: transparent;
+        margin-left: 0;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        display: block;
+        height: 6px;
+        width: 3px;
+        opacity: 0.3;
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+
+      @-moz-keyframes rain {
+        50% {
+          -moz-transform: translateY(-20px);
+          transform: translateY(-20px);
+        }
+      }
+
+      @-webkit-keyframes rain {
+        50% {
+          -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes rain {
+        50% {
+          -moz-transform: translateY(-20px);
+          -ms-transform: translateY(-20px);
+          -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+        }
+      }
+
+      @-moz-keyframes rain-shadow {
+        50% {
+          -moz-transform: translateY(20px) scale(1);
+          transform: translateY(20px) scale(1);
+          opacity: 0.05;
+        }
+      }
+
+      @-webkit-keyframes rain-shadow {
+        50% {
+          -webkit-transform: translateY(20px) scale(1);
+          transform: translateY(20px) scale(1);
+          opacity: 0.05;
+        }
+      }
+
+      @keyframes rain-shadow {
+        50% {
+          -moz-transform: translateY(20px) scale(1);
+          -ms-transform: translateY(20px) scale(1);
+          -webkit-transform: translateY(20px) scale(1);
+          transform: translateY(20px) scale(1);
+          opacity: 0.05;
+        }
+      }
+
+      @-moz-keyframes rain-drop {
+        0% {
+          -moz-box-shadow: transparent 30px 30px, transparent 40px 40px,
+            blue 50px 75px, blue 55px 50px, blue 70px 100px, blue 80px 95px,
+            blue 110px 45px, blue 90px 35px;
+          box-shadow: transparent 30px 30px, transparent 40px 40px,
+            blue 50px 75px, blue 55px 50px, blue 70px 100px, blue 80px 95px,
+            blue 110px 45px, blue 90px 35px;
+        }
+        25% {
+          -moz-box-shadow: blue 30px 45px, blue 40px 60px, blue 50px 90px,
+            blue 55px 65px, transparent 70px 120px, transparent 80px 120px,
+            blue 110px 70px, blue 90px 60px;
+          box-shadow: blue 30px 45px, blue 40px 60px, blue 50px 90px,
+            blue 55px 65px, transparent 70px 120px, transparent 80px 120px,
+            blue 110px 70px, blue 90px 60px;
+        }
+        26% {
+          -moz-box-shadow: blue 30px 45px, blue 40px 60px, blue 50px 90px,
+            blue 55px 65px, transparent 70px 40px, transparent 80px 20px,
+            blue 110px 70px, blue 90px 60px;
+          box-shadow: blue 30px 45px, blue 40px 60px, blue 50px 90px,
+            blue 55px 65px, transparent 70px 40px, transparent 80px 20px,
+            blue 110px 70px, blue 90px 60px;
+        }
+        50% {
+          -moz-box-shadow: blue 30px 70px, blue 40px 80px,
+            transparent 50px 100px, blue 55px 80px, blue 70px 60px,
+            blue 80px 45px, blue 110px 95px, blue 90px 85px;
+          box-shadow: blue 30px 70px, blue 40px 80px, transparent 50px 100px,
+            blue 55px 80px, blue 70px 60px, blue 80px 45px, blue 110px 95px,
+            blue 90px 85px;
+        }
+        51% {
+          -moz-box-shadow: blue 30px 70px, blue 40px 80px, transparent 50px 45px,
+            blue 55px 80px, blue 70px 60px, blue 80px 45px, blue 110px 95px,
+            blue 90px 85px;
+          box-shadow: blue 30px 70px, blue 40px 80px, transparent 50px 45px,
+            blue 55px 80px, blue 70px 60px, blue 80px 45px, blue 110px 95px,
+            blue 90px 85px;
+        }
+        75% {
+          -moz-box-shadow: blue 30px 95px, blue 40px 100px, blue 50px 60px,
+            transparent 55px 95px, blue 70px 80px, blue 80px 70px,
+            transparent 110px 120px, transparent 90px 110px;
+          box-shadow: blue 30px 95px, blue 40px 100px, blue 50px 60px,
+            transparent 55px 95px, blue 70px 80px, blue 80px 70px,
+            transparent 110px 120px, transparent 90px 110px;
+        }
+        76% {
+          -moz-box-shadow: blue 30px 95px, blue 40px 100px, blue 50px 60px,
+            transparent 55px 35px, blue 70px 80px, blue 80px 70px,
+            transparent 110px 25px, transparent 90px 15px;
+          box-shadow: blue 30px 95px, blue 40px 100px, blue 50px 60px,
+            transparent 55px 35px, blue 70px 80px, blue 80px 70px,
+            transparent 110px 25px, transparent 90px 15px;
+        }
+        100% {
+          -moz-box-shadow: transparent 30px 120px, transparent 40px 120px,
+            blue 50px 75px, blue 55px 50px, blue 70px 100px, blue 80px 95px,
+            blue 110px 45px, blue 90px 35px;
+          box-shadow: transparent 30px 120px, transparent 40px 120px,
+            blue 50px 75px, blue 55px 50px, blue 70px 100px, blue 80px 95px,
+            blue 110px 45px, blue 90px 35px;
+        }
+      }
+
+      @-webkit-keyframes rain-drop {
+        0% {
+          -webkit-box-shadow: transparent 30px 30px, transparent 40px 40px,
+            blue 50px 75px, blue 55px 50px, blue 70px 100px, blue 80px 95px,
+            blue 110px 45px, blue 90px 35px;
+          box-shadow: transparent 30px 30px, transparent 40px 40px,
+            blue 50px 75px, blue 55px 50px, blue 70px 100px, blue 80px 95px,
+            blue 110px 45px, blue 90px 35px;
+        }
+        25% {
+          -webkit-box-shadow: blue 30px 45px, blue 40px 60px, blue 50px 90px,
+            blue 55px 65px, transparent 70px 120px, transparent 80px 120px,
+            blue 110px 70px, blue 90px 60px;
+          box-shadow: blue 30px 45px, blue 40px 60px, blue 50px 90px,
+            blue 55px 65px, transparent 70px 120px, transparent 80px 120px,
+            blue 110px 70px, blue 90px 60px;
+        }
+        26% {
+          -webkit-box-shadow: blue 30px 45px, blue 40px 60px, blue 50px 90px,
+            blue 55px 65px, transparent 70px 40px, transparent 80px 20px,
+            blue 110px 70px, blue 90px 60px;
+          box-shadow: blue 30px 45px, blue 40px 60px, blue 50px 90px,
+            blue 55px 65px, transparent 70px 40px, transparent 80px 20px,
+            blue 110px 70px, blue 90px 60px;
+        }
+        50% {
+          -webkit-box-shadow: blue 30px 70px, blue 40px 80px,
+            transparent 50px 100px, blue 55px 80px, blue 70px 60px,
+            blue 80px 45px, blue 110px 95px, blue 90px 85px;
+          box-shadow: blue 30px 70px, blue 40px 80px, transparent 50px 100px,
+            blue 55px 80px, blue 70px 60px, blue 80px 45px, blue 110px 95px,
+            blue 90px 85px;
+        }
+        51% {
+          -webkit-box-shadow: blue 30px 70px, blue 40px 80px,
+            transparent 50px 45px, blue 55px 80px, blue 70px 60px,
+            blue 80px 45px, blue 110px 95px, blue 90px 85px;
+          box-shadow: blue 30px 70px, blue 40px 80px, transparent 50px 45px,
+            blue 55px 80px, blue 70px 60px, blue 80px 45px, blue 110px 95px,
+            blue 90px 85px;
+        }
+        75% {
+          -webkit-box-shadow: blue 30px 95px, blue 40px 100px, blue 50px 60px,
+            transparent 55px 95px, blue 70px 80px, blue 80px 70px,
+            transparent 110px 120px, transparent 90px 110px;
+          box-shadow: blue 30px 95px, blue 40px 100px, blue 50px 60px,
+            transparent 55px 95px, blue 70px 80px, blue 80px 70px,
+            transparent 110px 120px, transparent 90px 110px;
+        }
+        76% {
+          -webkit-box-shadow: blue 30px 95px, blue 40px 100px, blue 50px 60px,
+            transparent 55px 35px, blue 70px 80px, blue 80px 70px,
+            transparent 110px 25px, transparent 90px 15px;
+          box-shadow: blue 30px 95px, blue 40px 100px, blue 50px 60px,
+            transparent 55px 35px, blue 70px 80px, blue 80px 70px,
+            transparent 110px 25px, transparent 90px 15px;
+        }
+        100% {
+          -webkit-box-shadow: transparent 30px 120px, transparent 40px 120px,
+            blue 50px 75px, blue 55px 50px, blue 70px 100px, blue 80px 95px,
+            blue 110px 45px, blue 90px 35px;
+          box-shadow: transparent 30px 120px, transparent 40px 120px,
+            blue 50px 75px, blue 55px 50px, blue 70px 100px, blue 80px 95px,
+            blue 110px 45px, blue 90px 35px;
+        }
+      }
+
+      @keyframes rain-drop {
+        0% {
+          -moz-box-shadow: transparent 30px 30px, transparent 40px 40px,
+            blue 50px 75px, blue 55px 50px, blue 70px 100px, blue 80px 95px,
+            blue 110px 45px, blue 90px 35px;
+          -webkit-box-shadow: transparent 30px 30px, transparent 40px 40px,
+            blue 50px 75px, blue 55px 50px, blue 70px 100px, blue 80px 95px,
+            blue 110px 45px, blue 90px 35px;
+          box-shadow: transparent 30px 30px, transparent 40px 40px,
+            blue 50px 75px, blue 55px 50px, blue 70px 100px, blue 80px 95px,
+            blue 110px 45px, blue 90px 35px;
+        }
+        25% {
+          -moz-box-shadow: blue 30px 45px, blue 40px 60px, blue 50px 90px,
+            blue 55px 65px, transparent 70px 120px, transparent 80px 120px,
+            blue 110px 70px, blue 90px 60px;
+          -webkit-box-shadow: blue 30px 45px, blue 40px 60px, blue 50px 90px,
+            blue 55px 65px, transparent 70px 120px, transparent 80px 120px,
+            blue 110px 70px, blue 90px 60px;
+          box-shadow: blue 30px 45px, blue 40px 60px, blue 50px 90px,
+            blue 55px 65px, transparent 70px 120px, transparent 80px 120px,
+            blue 110px 70px, blue 90px 60px;
+        }
+        26% {
+          -moz-box-shadow: blue 30px 45px, blue 40px 60px, blue 50px 90px,
+            blue 55px 65px, transparent 70px 40px, transparent 80px 20px,
+            blue 110px 70px, blue 90px 60px;
+          -webkit-box-shadow: blue 30px 45px, blue 40px 60px, blue 50px 90px,
+            blue 55px 65px, transparent 70px 40px, transparent 80px 20px,
+            blue 110px 70px, blue 90px 60px;
+          box-shadow: blue 30px 45px, blue 40px 60px, blue 50px 90px,
+            blue 55px 65px, transparent 70px 40px, transparent 80px 20px,
+            blue 110px 70px, blue 90px 60px;
+        }
+        50% {
+          -moz-box-shadow: blue 30px 70px, blue 40px 80px,
+            transparent 50px 100px, blue 55px 80px, blue 70px 60px,
+            blue 80px 45px, blue 110px 95px, blue 90px 85px;
+          -webkit-box-shadow: blue 30px 70px, blue 40px 80px,
+            transparent 50px 100px, blue 55px 80px, blue 70px 60px,
+            blue 80px 45px, blue 110px 95px, blue 90px 85px;
+          box-shadow: blue 30px 70px, blue 40px 80px, transparent 50px 100px,
+            blue 55px 80px, blue 70px 60px, blue 80px 45px, blue 110px 95px,
+            blue 90px 85px;
+        }
+        51% {
+          -moz-box-shadow: blue 30px 70px, blue 40px 80px, transparent 50px 45px,
+            blue 55px 80px, blue 70px 60px, blue 80px 45px, blue 110px 95px,
+            blue 90px 85px;
+          -webkit-box-shadow: blue 30px 70px, blue 40px 80px,
+            transparent 50px 45px, blue 55px 80px, blue 70px 60px,
+            blue 80px 45px, blue 110px 95px, blue 90px 85px;
+          box-shadow: blue 30px 70px, blue 40px 80px, transparent 50px 45px,
+            blue 55px 80px, blue 70px 60px, blue 80px 45px, blue 110px 95px,
+            blue 90px 85px;
+        }
+        75% {
+          -moz-box-shadow: blue 30px 95px, blue 40px 100px, blue 50px 60px,
+            transparent 55px 95px, blue 70px 80px, blue 80px 70px,
+            transparent 110px 120px, transparent 90px 110px;
+          -webkit-box-shadow: blue 30px 95px, blue 40px 100px, blue 50px 60px,
+            transparent 55px 95px, blue 70px 80px, blue 80px 70px,
+            transparent 110px 120px, transparent 90px 110px;
+          box-shadow: blue 30px 95px, blue 40px 100px, blue 50px 60px,
+            transparent 55px 95px, blue 70px 80px, blue 80px 70px,
+            transparent 110px 120px, transparent 90px 110px;
+        }
+        76% {
+          -moz-box-shadow: blue 30px 95px, blue 40px 100px, blue 50px 60px,
+            transparent 55px 35px, blue 70px 80px, blue 80px 70px,
+            transparent 110px 25px, transparent 90px 15px;
+          -webkit-box-shadow: blue 30px 95px, blue 40px 100px, blue 50px 60px,
+            transparent 55px 35px, blue 70px 80px, blue 80px 70px,
+            transparent 110px 25px, transparent 90px 15px;
+          box-shadow: blue 30px 95px, blue 40px 100px, blue 50px 60px,
+            transparent 55px 35px, blue 70px 80px, blue 80px 70px,
+            transparent 110px 25px, transparent 90px 15px;
+        }
+        100% {
+          -moz-box-shadow: transparent 30px 120px, transparent 40px 120px,
+            blue 50px 75px, blue 55px 50px, blue 70px 100px, blue 80px 95px,
+            blue 110px 45px, blue 90px 35px;
+          -webkit-box-shadow: transparent 30px 120px, transparent 40px 120px,
+            blue 50px 75px, blue 55px 50px, blue 70px 100px, blue 80px 95px,
+            blue 110px 45px, blue 90px 35px;
+          box-shadow: transparent 30px 120px, transparent 40px 120px,
+            blue 50px 75px, blue 55px 50px, blue 70px 100px, blue 80px 95px,
+            blue 110px 45px, blue 90px 35px;
         }
       }
     }

@@ -6,9 +6,10 @@ import './ForcastSwiper.scss';
 
 interface ForcastCardProps {
   weather: string;
+  description: string;
 }
 
-const ForcastCard = ({ weather }: ForcastCardProps) => {
+const ForcastCard = ({ weather, description }: ForcastCardProps) => {
   return (
     <Card className="forcast-card">
       <div className={`card-bg card-${weather}`}>
@@ -28,7 +29,7 @@ const ForcastCard = ({ weather }: ForcastCardProps) => {
           </div>
         </div>
 
-        <div className="weather-description">Clear skies</div>
+        <div className="weather-description">{description}</div>
       </div>
     </Card>
   );
