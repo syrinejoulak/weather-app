@@ -1,13 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface WeatherState {
+interface WeatherState {
   temperatureScale: boolean;
   temperature: number;
+  city: string;
+  data: any;
 }
 
 const initialState: WeatherState = {
   temperatureScale: false,
   temperature: 70,
+  city: 'Tunis',
+  data: [],
 };
 
 export const weatherSlice = createSlice({
@@ -23,10 +27,16 @@ export const weatherSlice = createSlice({
         state.temperature = (state.temperature * 9) / 5 + 32;
       }
     },
+    setCity: (state, action: PayloadAction<string>) => {
+      state.city = action.payload;
+    },
+    setData: (state, action: PayloadAction<any>) => {
+      state.data = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setTemperatureScale } = weatherSlice.actions;
+export const { setTemperatureScale, setCity, setData } = weatherSlice.actions;
 
 export default weatherSlice.reducer;
