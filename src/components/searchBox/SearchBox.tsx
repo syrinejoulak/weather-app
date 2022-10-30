@@ -8,6 +8,7 @@ import './SearchBox.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { setCity, setData } from '../../redux/slices/weather';
+import { filteringAPIData } from '../../utils/filteringData';
 
 const SearchBox = () => {
   const dispatch = useDispatch();
@@ -20,28 +21,10 @@ const SearchBox = () => {
   const searchCity = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       axios.get(url).then((response) => {
-        dispatch(setCity(response.data.city.name));
-
-        const neededData = response.data.list.map((data: any) => {
-          return {
-            date: data.dt_txt,
-            weather: {
-              main: data.weather[0].main,
-              description: data.weather[0].description,
-            },
-            temperature: data.main.temp,
-            wind: data.wind.speed,
-            humidity: data.main.humidity,
-          };
-        });
-
-        const actualTime = neededData[0].date.split(' ')[1];
-
-        const filteredData = neededData.filter((weatherData: any) =>
-          weatherData.date.includes(actualTime)
-        );
+        const filteredData = filteringAPIData(response);
 
         dispatch(setData(filteredData));
+        dispatch(setCity(response.data.city.name));
       });
     }
   };
@@ -52,31 +35,10 @@ const SearchBox = () => {
 
   useEffect(() => {
     axios.get(url).then((response) => {
-      console.log('city', response.data.city.name);
-      const neededData = response.data.list.map((data: any) => {
-        return {
-          date: data.dt_txt,
-          weather: {
-            main: data.weather[0].main,
-            description: data.weather[0].description,
-          },
-          temperature: data.main.temp,
-          wind: data.wind.speed,
-          humidity: data.main.humidity,
-        };
-      });
-
-      const actualTime = neededData[0].date.split(' ')[1];
-
-      const filteredData = neededData.filter((weatherData: any) =>
-        weatherData.date.includes(actualTime)
-      );
-
+      const filteredData = filteringAPIData(response);
       dispatch(setData(filteredData));
     });
   }, []);
-
-  console.log('test', data);
 
   return (
     <Card className="searchbox-card">

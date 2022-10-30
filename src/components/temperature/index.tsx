@@ -1,7 +1,7 @@
 import { FaTemperatureHigh, FaTemperatureLow } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import { isHigh } from '../../utils/isHight';
+import { isHigh } from '../../utils/filteringData';
 
 import './Temperature.scss';
 
