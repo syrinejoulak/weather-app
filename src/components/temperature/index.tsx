@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-
 import { FaTemperatureHigh, FaTemperatureLow } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
+import { isHigh } from '../../utils/isHight';
 
 import './Temperature.scss';
 
@@ -14,7 +13,7 @@ const Temperature = () => {
     (state: RootState) => state.weather.temperature
   );
 
-  const isHight = true;
+  const isHight = isHigh(temperatureScale, temperature);
 
   return (
     <div className="temperature-container">
