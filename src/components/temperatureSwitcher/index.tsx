@@ -1,12 +1,10 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setTemperatureScale } from '../../redux/slices/weather';
-import { RootState } from '../../redux/store';
 
 import './TemperatureSwitcher.scss';
 
 const TemperatureSwitcher = () => {
   const dispatch = useDispatch();
-  const f = useSelector((state: RootState) => state.weather.temperatureScale);
 
   const onHandleCheck = () => {
     dispatch(setTemperatureScale());

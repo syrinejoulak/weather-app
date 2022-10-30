@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FaTemperatureHigh, FaTemperatureLow } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 
 import './Temperature.scss';
 
 const Temperature = () => {
+  const temperatureScale = useSelector(
+    (state: RootState) => state.weather.temperatureScale
+  );
+  const temperature = useSelector(
+    (state: RootState) => state.weather.temperature
+  );
+
   const isHight = true;
 
   return (
@@ -19,7 +28,9 @@ const Temperature = () => {
       <div className="temperature-dial-top"></div>
       <div className="temperature-dial-label">
         {isHight ? <FaTemperatureHigh /> : <FaTemperatureLow />}
-        <div>7&deg;F</div>
+        <div>
+          {Math.trunc(temperature)}&deg;{temperatureScale ? 'C' : 'F'}
+        </div>
       </div>
     </div>
   );

@@ -2,10 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export interface WeatherState {
   temperatureScale: boolean;
+  temperature: number;
 }
 
 const initialState: WeatherState = {
   temperatureScale: false,
+  temperature: 70,
 };
 
 export const weatherSlice = createSlice({
@@ -14,6 +16,12 @@ export const weatherSlice = createSlice({
   reducers: {
     setTemperatureScale: (state) => {
       state.temperatureScale = !state.temperatureScale;
+
+      if (state.temperatureScale) {
+        state.temperature = ((state.temperature - 32) * 5) / 9;
+      } else {
+        state.temperature = (state.temperature * 9) / 5 + 32;
+      }
     },
   },
 });
