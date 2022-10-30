@@ -7,7 +7,7 @@ import Card from '../UI/Card/Card';
 import './SearchBox.scss';
 
 const SearchBox = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState<any[]>([]);
   const [city, setCity] = useState('Tunis');
 
   const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=762385c71cb82e47ad4fdd68f06f6271`;
@@ -15,7 +15,8 @@ const SearchBox = () => {
   const searchCity = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       axios.get(url).then((response) => {
-        const filteredData = response.data.list.map((data: any) => {
+        console.log('city', response.data.city.name);
+        const neededData = response.data.list.map((data: any) => {
           return {
             date: data.dt_txt,
             weather: {
@@ -28,6 +29,12 @@ const SearchBox = () => {
           };
         });
 
+        const actualTime = neededData[0].date.split(' ')[1];
+
+        const filteredData = neededData.filter((weatherData: any) =>
+          weatherData.date.includes(actualTime)
+        );
+
         setData(filteredData);
       });
     }
@@ -39,7 +46,8 @@ const SearchBox = () => {
 
   useEffect(() => {
     axios.get(url).then((response) => {
-      const filteredData = response.data.list.map((data: any) => {
+      console.log('city', response.data.city.name);
+      const neededData = response.data.list.map((data: any) => {
         return {
           date: data.dt_txt,
           weather: {
@@ -52,9 +60,17 @@ const SearchBox = () => {
         };
       });
 
+      const actualTime = neededData[0].date.split(' ')[1];
+
+      const filteredData = neededData.filter((weatherData: any) =>
+        weatherData.date.includes(actualTime)
+      );
+
       setData(filteredData);
     });
   }, []);
+
+  console.log('test', data);
 
   return (
     <Card className="searchbox-card">
