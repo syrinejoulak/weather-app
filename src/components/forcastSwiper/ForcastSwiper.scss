@@ -1,8 +1,6 @@
 .forcast-cards-container {
-  margin-top: 80px;
-  margin-bottom: 60px;
-  //to change
-  display: flex;
+  width: 900px;
+  margin: 80px auto 60px auto;
 
   .forcast-card {
     position: relative;
@@ -636,7 +634,7 @@
           -webkit-transform: scale(0.7);
           transform: scale(0.7);
         }
-        //cloudy remove before
+
         &:before {
           -moz-animation: snow-flakes 2s infinite linear;
           -webkit-animation: snow-flakes 2s infinite linear;
@@ -945,7 +943,7 @@
       }
     }
 
-    //snow
+    //cloud
     .card-cloud {
       background-color: #ccd1d9;
 
