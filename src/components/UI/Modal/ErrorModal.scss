@@ -1,0 +1,99 @@
+@import '../../../styles/mixins';
+
+.error-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  .error-modal-bg {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(7px);
+  }
+
+  .error-modal__container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: calc((100vh - 300px) / 2);
+    left: 0;
+    right: 0;
+    z-index: 11px;
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    padding: 40px;
+
+    @include breakpoint(tablet) {
+      top: calc((100vh - 300px) / 2);
+      width: 400px;
+      padding: 40px;
+      height: 300px;
+    }
+
+    @include breakpoint(mobile) {
+      top: calc((100vh - 300px) / 2);
+      width: 300px;
+      height: 260px;
+      padding: 25px;
+    }
+
+    .icon {
+      font-size: 55px;
+      color: rgb(177, 36, 36);
+
+      @include breakpoint(mobile) {
+        font-size: 40px;
+      }
+    }
+
+    h2 {
+      font-size: 22px;
+      margin: 10px auto 15px auto;
+
+      @include breakpoint(mobile) {
+        font-size: 20px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: rgb(108, 105, 105);
+      margin-bottom: 10px;
+
+      @include breakpoint(mobile) {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+    }
+
+    button {
+      font-size: 22px;
+      color: white;
+      background-color: black;
+      border-radius: 10px;
+      width: fit-content;
+      padding: 10px 20px;
+      margin: 10px auto;
+      border: none;
+      transition: border 1s, background-color 1s;
+
+      @include breakpoint(mobile) {
+        font-size: 18px;
+        padding: 10px 20px;
+      }
+
+      &:hover {
+        border: 1px solid black;
+        background-color: rgb(108, 105, 105);
+        transition: border 1s, background-color 1s;
+      }
+    }
+  }
+}

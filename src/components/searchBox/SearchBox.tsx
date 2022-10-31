@@ -9,25 +9,28 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { setActiveIndex, setCity, setData } from '../../redux/slices/weather';
 import { filteringAPIData } from '../../utils/filteringData';
+import { openModal } from '../../redux/slices/modal';
 
 const SearchBox = () => {
   const dispatch = useDispatch();
 
   const city = useSelector((state: RootState) => state.weather.city);
-  const data = useSelector((state: RootState) => state.weather.data);
-
-  // console.log('data', data);
 
   const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=762385c71cb82e47ad4fdd68f06f6271`;
 
   const searchCity = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      axios.get(url).then((response) => {
-        const filteredData = filteringAPIData(response);
+      axios
+        .get(url)
+        .then((response) => {
+          const filteredData = filteringAPIData(response);
 
-        dispatch(setData(filteredData));
-        dispatch(setCity(response.data.city.name));
-      });
+          dispatch(setData(filteredData));
+          dispatch(setCity(response.data.city.name));
+        })
+        .catch((response) => {
+          dispatch(openModal(response.response.data.message));
+        });
     }
   };
 
