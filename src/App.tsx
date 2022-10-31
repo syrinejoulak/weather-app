@@ -12,8 +12,8 @@ function App() {
       <SearchBox />
       <Temperature />
       <ForcastSwiper />
-      <ForcastDate />
-      <BarChartContainer />
+      {/* <ForcastDate /> */}
+      {/* <BarChartContainer /> */}
     </div>
   );
 }

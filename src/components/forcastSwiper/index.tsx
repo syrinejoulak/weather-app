@@ -11,9 +11,13 @@ import 'swiper/css/navigation';
 import { setActiveIndex } from '../../redux/slices/weather';
 import LoadingSpinner from '../UI/Spinner/LoadingSpinner';
 import Card from '../UI/Card/Card';
+import useWindowSize from '../../hooks/useWindowSize';
 
 const ForcastSwiper = () => {
   const dispatch = useDispatch();
+
+  const { width } = useWindowSize();
+
   const data = useSelector((state: RootState) => state.weather.data);
 
   // console.log('first', data);
@@ -38,10 +42,11 @@ const ForcastSwiper = () => {
   return (
     <div className="forcast-cards-container">
       <Swiper
-        slidesPerView={3}
+        slidesPerView={width > 599 ? 3 : 1}
+        spaceBetween={0}
         modules={[Navigation]}
         navigation
-        centeredSlides
+        centeredSlides={width > 599 ? true : false}
         speed={1000}
         onActiveIndexChange={(swiper) =>
           dispatch(setActiveIndex(swiper.realIndex))

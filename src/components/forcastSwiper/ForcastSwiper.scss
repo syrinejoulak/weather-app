@@ -1,6 +1,13 @@
+@import '../../styles/mixins';
+
 .forcast-cards-container {
   width: 900px;
   margin: 80px auto 60px auto;
+
+  @include breakpoint(tablet) {
+    width: 90vw;
+    margin: 40px auto 20px auto;
+  }
 
   .forcast-card {
     position: relative;
@@ -8,6 +15,10 @@
     height: 340px;
     margin: auto;
     border-radius: 10px;
+
+    @include breakpoint(tablet) {
+      transform: scale(0.8);
+    }
 
     .card-bg {
       position: relative;
@@ -1693,6 +1704,13 @@
     .swiper-slide-active {
       transform: scale(1.2);
       transition: transform 1s;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      @include breakpoint(tablet) {
+        display: none;
+      }
     }
   }
 }
