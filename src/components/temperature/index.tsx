@@ -6,9 +6,14 @@ import { isHigh } from '../../utils/filteringData';
 import './Temperature.scss';
 
 const Temperature = () => {
-  const weather = useSelector((state: RootState) => state.weather);
+  const temperatureScale = useSelector(
+    (state: RootState) => state.weather.temperatureScale
+  );
+  const temperature = useSelector(
+    (state: RootState) => state.weather.temperature
+  );
 
-  const isHight = isHigh(weather.temperatureScale, weather.temperature);
+  const isHight = isHigh(temperatureScale, temperature);
 
   return (
     <div className="temperature-container">
@@ -23,8 +28,7 @@ const Temperature = () => {
       <div className="temperature-dial-label">
         {isHight ? <FaTemperatureHigh /> : <FaTemperatureLow />}
         <div>
-          {Math.trunc(weather.temperature)}&deg;
-          {weather.temperatureScale ? 'C' : 'F'}
+          {Math.trunc(temperature)}&deg;{temperatureScale ? 'C' : 'F'}
         </div>
       </div>
     </div>

@@ -17,7 +17,8 @@ export const filteringAPIData = (response: any) => {
         main: data.weather[0].main,
         description: data.weather[0].description,
       },
-      temperature: data.main.temp,
+      temperatureInC: data.main.temp - 273.15,
+      temperatureInF: (data.main.temp - 273.15) * (9 / 5) + 32,
       wind: data.wind.speed,
       humidity: data.main.humidity,
     };

@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { convertCelciusAndFarenheit } from '../../utils/dataConversion';
 
 interface WeatherState {
   temperatureScale: boolean;
@@ -23,27 +24,29 @@ export const weatherSlice = createSlice({
     setTemperatureScale: (state) => {
       state.temperatureScale = !state.temperatureScale;
 
-      if (state.temperatureScale) {
-        state.temperature = ((state.temperature - 32) * 5) / 9;
-      } else {
-        state.temperature = state.temperature * (9 / 5) + 32;
-      }
+      state.temperature = convertCelciusAndFarenheit(
+        state.temperature,
+        state.temperatureScale
+      );
     },
     setCity: (state, action: PayloadAction<string>) => {
       state.city = action.payload;
     },
     setData: (state, action: PayloadAction<any>) => {
       state.data = action.payload;
+      let activeData = state.data[state.activeSlide];
+
+      state.temperatureScale
+        ? (state.temperature = activeData.temperatureInC)
+        : (state.temperature = activeData.temperatureInF);
     },
     setActiveIndex: (state, action: PayloadAction<number>) => {
       state.activeSlide = action.payload;
+      let activeData = state.data[state.activeSlide];
 
-      if (state.temperatureScale) {
-        state.temperature = state.data[state.activeSlide].temperature - 273.15;
-      } else {
-        state.temperature =
-          (state.data[state.activeSlide].temperature - 273.15) * (9 / 5) + 32;
-      }
+      state.temperatureScale
+        ? (state.temperature = activeData.temperatureInC)
+        : (state.temperature = activeData.temperatureInF);
     },
   },
 });
