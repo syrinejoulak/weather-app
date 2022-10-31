@@ -7,7 +7,7 @@ import Card from '../UI/Card/Card';
 import './SearchBox.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import { setCity, setData } from '../../redux/slices/weather';
+import { setActiveIndex, setCity, setData } from '../../redux/slices/weather';
 import { filteringAPIData } from '../../utils/filteringData';
 
 const SearchBox = () => {
@@ -37,6 +37,7 @@ const SearchBox = () => {
     axios.get(url).then((response) => {
       const filteredData = filteringAPIData(response);
       dispatch(setData(filteredData));
+      dispatch(setActiveIndex(0));
     });
   }, []);
 

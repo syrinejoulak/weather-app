@@ -1672,4 +1672,21 @@
       }
     }
   }
+
+  //swiper
+
+  .swiper {
+    height: 435px;
+    padding: 50px 0;
+
+    .swiper-slide {
+      transform: scale(1);
+      transition: transform 1s;
+    }
+
+    .swiper-slide-active {
+      transform: scale(1.2);
+      transition: transform 1s;
+    }
+  }
 }

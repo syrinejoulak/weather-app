@@ -49,11 +49,11 @@
       .toggle__bg {
         width: 95px;
         height: 50px;
-        background: hsla(199, 43%, 59%, 1);
+        background: hsla(18, 77%, 50%, 1);
         background: linear-gradient(
           to right,
-          hsla(199, 43%, 59%, 1) 50%,
-          hsla(18, 77%, 50%, 1) 50% 100%
+          hsla(18, 77%, 50%, 1) 50%,
+          hsla(199, 43%, 59%, 1) 50% 100%
         );
         background-size: 200% 100%;
         background-position: 75%;
@@ -68,11 +68,11 @@
           position: relative;
           height: 39px;
           width: 39px;
-          background: hsla(18, 100%, 62%, 1);
+          background: hsla(199, 43%, 59%, 1);
           background: linear-gradient(
             to right,
-            hsla(199, 43%, 59%, 1) 50%,
-            hsla(18, 77%, 50%, 1) 50% 100%
+            hsla(18, 77%, 50%, 1) 50%,
+            hsla(199, 43%, 59%, 1) 50% 100%
           );
           border-radius: 50%;
           transform-origin: top left;
@@ -137,13 +137,13 @@
             }
 
             &:before {
-              content: '°F';
-              background-color: hsla(18, 77%, 50%, 1);
+              content: '°C';
+              background-color: hsla(199, 43%, 59%, 1);
             }
 
             &:after {
-              content: '°C';
-              background-color: hsla(199, 43%, 59%, 1);
+              content: '°F';
+              background-color: hsla(18, 77%, 50%, 1);
               transform: rotateY(180deg);
             }
           }

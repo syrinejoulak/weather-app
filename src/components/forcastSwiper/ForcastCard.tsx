@@ -50,7 +50,7 @@ const ForcastCard = ({
         </div>
 
         <div className="weather-description">
-          {description.charAt(0).toUpperCase() + description.slice(1)}
+          {description?.charAt(0).toUpperCase() + description?.slice(1)}
         </div>
       </div>
     </Card>
