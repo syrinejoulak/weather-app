@@ -1722,5 +1722,39 @@
         display: none;
       }
     }
+
+    .swiper-button-disabled {
+      animation: none !important;
+    }
+
+    .swiper-button-prev {
+      animation: arrow-prev-animation 1s ease-in-out infinite;
+    }
+
+    .swiper-button-next {
+      animation: arrow-next-animation 1s ease-in-out infinite;
+    }
+
+    @keyframes arrow-prev-animation {
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(-10px, 0);
+      }
+    }
+  }
+
+  @keyframes arrow-next-animation {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    50% {
+      transform: translate(-10px, 0);
+    }
   }
 }
