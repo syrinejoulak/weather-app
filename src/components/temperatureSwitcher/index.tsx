@@ -1,24 +1,13 @@
-import { useDispatch } from 'react-redux';
-import { setTemperatureScale } from '../../redux/slices/weather';
+import TemperatureSwitcherInput from './TemperatureSwitcherInput';
 
 import './TemperatureSwitcher.scss';
 
 const TemperatureSwitcher = () => {
-  const dispatch = useDispatch();
-
-  const onHandleCheck = () => {
-    dispatch(setTemperatureScale());
-  };
-
   return (
     <form className="temperature-switcher">
       <label className="toggle">
         <div className="toggle__wrapper">
-          <input
-            type="checkbox"
-            className="checkbox"
-            onChange={onHandleCheck}
-          />
+          <TemperatureSwitcherInput />
           <div className="toggle__bg">
             <div className="toggle__sphere">
               <div className="toggle__sphere-bg"></div>
