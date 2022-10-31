@@ -61,3 +61,22 @@ export const convertDay = (date: string) => {
 
   return result;
 };
+
+export const getWeekDay = (date: string) => {
+  const days = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+
+  const actualDate = new Date(date);
+  const dayIndex = actualDate.getDay();
+
+  const actualDay = days[dayIndex];
+
+  return actualDay;
+};

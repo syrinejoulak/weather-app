@@ -3,6 +3,7 @@ import Temperature from './components/temperature';
 import TemperatureSwitcher from './components/temperatureSwitcher';
 import SearchBox from './components/searchBox/SearchBox';
 import ForcastDate from './components/forcastDate';
+import BarChartContainer from './components/barChart';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Temperature />
       <ForcastSwiper />
       <ForcastDate />
+      <BarChartContainer />
     </div>
   );
 }
