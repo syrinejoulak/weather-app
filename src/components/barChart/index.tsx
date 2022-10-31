@@ -15,6 +15,7 @@ import {
 
 import './BarChart.scss';
 import { getWeekDay } from '../../utils/dataConversion';
+import LoadingSpinner from '../UI/Spinner/LoadingSpinner';
 
 const BarChartContainer = () => {
   const storeData = useSelector((state: RootState) => state.weather.data);
@@ -28,25 +29,29 @@ const BarChartContainer = () => {
 
   return (
     <div className="barchart-container">
-      <BarChart
-        width={600}
-        height={400}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-        className="barchart"
-      >
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="temperature" fill="#8884d8" />
-        <Bar dataKey="humidity" fill="#82ca9d" />
-      </BarChart>
+      {Object.keys(storeData[0]).length === 0 ? (
+        <LoadingSpinner />
+      ) : (
+        <BarChart
+          width={600}
+          height={400}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+          className="barchart"
+        >
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="temperature" fill="#8884d8" />
+          <Bar dataKey="humidity" fill="#82ca9d" />
+        </BarChart>
+      )}
     </div>
   );
 };
