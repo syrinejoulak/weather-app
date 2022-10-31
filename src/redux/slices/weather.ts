@@ -6,7 +6,7 @@ import {
 
 interface WeatherState {
   temperatureScale: boolean;
-  temperature: number;
+  temperature: number | null;
   date: string;
   city: string;
   data: any;
@@ -15,7 +15,7 @@ interface WeatherState {
 
 const initialState: WeatherState = {
   temperatureScale: true,
-  temperature: 0,
+  temperature: null,
   date: '',
   city: 'Tunis',
   data: [{}],
@@ -29,10 +29,12 @@ export const weatherSlice = createSlice({
     setTemperatureScale: (state) => {
       state.temperatureScale = !state.temperatureScale;
 
-      state.temperature = convertCelciusAndFarenheit(
-        state.temperature,
-        state.temperatureScale
-      );
+      if (state.temperature) {
+        state.temperature = convertCelciusAndFarenheit(
+          state.temperature,
+          state.temperatureScale
+        );
+      }
     },
     setCity: (state, action: PayloadAction<string>) => {
       state.city = action.payload;

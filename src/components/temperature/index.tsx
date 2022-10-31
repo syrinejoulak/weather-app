@@ -1,7 +1,9 @@
+import { Fragment } from 'react';
 import { FaTemperatureHigh, FaTemperatureLow } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { isHigh } from '../../utils/filteringData';
+import LoadingSpinner from '../UI/Spinner/LoadingSpinner';
 
 import './Temperature.scss';
 
@@ -12,8 +14,6 @@ const Temperature = () => {
   const temperature = useSelector(
     (state: RootState) => state.weather.temperature
   );
-
-  const isHight = isHigh(temperatureScale, temperature);
 
   return (
     <div className="temperature-container">
@@ -26,10 +26,20 @@ const Temperature = () => {
 
       <div className="temperature-dial-top"></div>
       <div className="temperature-dial-label">
-        {isHight ? <FaTemperatureHigh /> : <FaTemperatureLow />}
-        <div>
-          {Math.trunc(temperature)}&deg;{temperatureScale ? 'C' : 'F'}
-        </div>
+        {temperature ? (
+          <Fragment>
+            {isHigh(temperatureScale, temperature) ? (
+              <FaTemperatureHigh />
+            ) : (
+              <FaTemperatureLow />
+            )}
+            <div>
+              {Math.trunc(temperature)}&deg;{temperatureScale ? 'C' : 'F'}
+            </div>
+          </Fragment>
+        ) : (
+          <LoadingSpinner />
+        )}
       </div>
     </div>
   );

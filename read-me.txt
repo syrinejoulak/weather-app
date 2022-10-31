@@ -2,3 +2,4 @@
 -display 3cards
 -cards-loading
 -dta type
+-responsive

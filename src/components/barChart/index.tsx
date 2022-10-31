@@ -18,11 +18,11 @@ import { getWeekDay } from '../../utils/dataConversion';
 
 const BarChartContainer = () => {
   const storeData = useSelector((state: RootState) => state.weather.data);
-  const data = storeData.map((forcast: any) => {
+  const data = storeData?.map((forcast: any) => {
     return {
       name: getWeekDay(forcast.date),
-      temperature: forcast.temperatureInC.toFixed(2),
-      humidity: forcast.humidity,
+      temperature: forcast.temperatureInC?.toFixed(2),
+      humidity: forcast?.humidity,
     };
   });
 
