@@ -1,3 +1,20 @@
+const ordinalConversion = (dayIndex: number, day: number) => {
+  if (dayIndex > 3 && dayIndex < 21) return day + 'th';
+  switch (dayIndex % 10) {
+    case 1:
+      return day + 'st';
+
+    case 2:
+      return day + 'nd';
+
+    case 3:
+      return day + 'rd';
+
+    default:
+      return day + 'th';
+  }
+};
+
 export const convertCelciusAndFarenheit = (
   temp: number,
   isCelcius: boolean
@@ -40,19 +57,7 @@ export const convertDay = (date: string) => {
   const day = actualDate.getDate();
   const month = actualDate.getMonth();
 
-  let dateOrdinal;
-
-  if (dayIndex > 3 && dayIndex < 21) return 'th';
-  switch (dayIndex % 10) {
-    case 1:
-      dateOrdinal = day + 'st';
-    case 2:
-      dateOrdinal = day + 'nd';
-    case 3:
-      dateOrdinal = day + 'rd';
-    default:
-      dateOrdinal = day + 'th';
-  }
+  const dateOrdinal = ordinalConversion(dayIndex, day);
 
   const actualDay = days[dayIndex];
   const actualMonth = months[month];

@@ -1,4 +1,0 @@
-
--display 3cards
--dta type
--date prb
