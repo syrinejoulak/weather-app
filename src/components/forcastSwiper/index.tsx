@@ -3,15 +3,15 @@ import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { RootState } from '../../redux/store';
 import ForcastCard from './ForcastCard';
+import { setActiveIndex } from '../../redux/slices/weather';
+import LoadingSpinner from '../UI/Spinner/LoadingSpinner';
+import Card from '../UI/Card/Card';
+import useWindowSize from '../../hooks/useWindowSize';
 
 import './ForcastSwiper.scss';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { setActiveIndex } from '../../redux/slices/weather';
-import LoadingSpinner from '../UI/Spinner/LoadingSpinner';
-import Card from '../UI/Card/Card';
-import useWindowSize from '../../hooks/useWindowSize';
 
 const ForcastSwiper = () => {
   const dispatch = useDispatch();

@@ -55,8 +55,8 @@ export const weatherSlice = createSlice({
       let activeData: any = state.data[state.activeSlide];
 
       state.temperatureScale
-        ? (state.temperature = activeData.temperature.temperatureInC)
-        : (state.temperature = activeData.temperature.temperatureInF);
+        ? (state.temperature = activeData?.temperature?.temperatureInC)
+        : (state.temperature = activeData?.temperature?.temperatureInF);
 
       state.date = convertDay(activeData.date);
     },
@@ -65,8 +65,8 @@ export const weatherSlice = createSlice({
       let activeData: any = state.data[state.activeSlide];
 
       state.temperatureScale
-        ? (state.temperature = activeData.temperature.temperatureInC)
-        : (state.temperature = activeData.temperature.temperatureInF);
+        ? (state.temperature = activeData?.temperature?.temperatureInC)
+        : (state.temperature = activeData?.temperature?.temperatureInF);
 
       state.date = convertDay(activeData.date);
     },
