@@ -18,7 +18,7 @@ const initialState: WeatherState = {
   temperature: null,
   date: '',
   city: 'Tunis',
-  data: [{}],
+  data: [{}, {}, {}, {}, {}],
   activeSlide: 0,
 };
 

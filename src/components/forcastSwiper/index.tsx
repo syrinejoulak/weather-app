@@ -9,6 +9,8 @@ import './ForcastSwiper.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { setActiveIndex } from '../../redux/slices/weather';
+import LoadingSpinner from '../UI/Spinner/LoadingSpinner';
+import Card from '../UI/Card/Card';
 
 const ForcastSwiper = () => {
   const dispatch = useDispatch();
@@ -18,12 +20,18 @@ const ForcastSwiper = () => {
 
   const forcasts = data?.map((forcast: any, key: number) => (
     <SwiperSlide key={key}>
-      <ForcastCard
-        main={forcast?.weather?.main}
-        description={forcast?.weather?.description}
-        humidity={forcast?.humidity}
-        wind={forcast?.wind}
-      />
+      {Object.keys(forcast).length === 0 ? (
+        <Card className="forcast-card forcast-card__spinner">
+          <LoadingSpinner />
+        </Card>
+      ) : (
+        <ForcastCard
+          main={forcast.weather.main}
+          description={forcast.weather.description}
+          humidity={forcast.humidity}
+          wind={forcast.wind}
+        />
+      )}
     </SwiperSlide>
   ));
 
