@@ -4,12 +4,23 @@ import {
   convertDay,
 } from '../../utils/dataConversion';
 
+export type DataType = {
+  date: string;
+  humidity: number;
+  temperature: { temperatureInC: number; temperatureInF: number };
+  weather: {
+    main: string;
+    description: string;
+  };
+  wind: number;
+};
+
 interface WeatherState {
   temperatureScale: boolean;
   temperature: number | null;
   date: string;
   city: string;
-  data: any;
+  data: DataType[] | [{}, {}, {}, {}, {}];
   activeSlide: number;
 }
 
@@ -41,21 +52,21 @@ export const weatherSlice = createSlice({
     },
     setData: (state, action: PayloadAction<any>) => {
       state.data = action.payload;
-      let activeData = state.data[state.activeSlide];
+      let activeData: any = state.data[state.activeSlide];
 
       state.temperatureScale
-        ? (state.temperature = activeData.temperatureInC)
-        : (state.temperature = activeData.temperatureInF);
+        ? (state.temperature = activeData.temperature.temperatureInC)
+        : (state.temperature = activeData.temperature.temperatureInF);
 
       state.date = convertDay(activeData.date);
     },
     setActiveIndex: (state, action: PayloadAction<number>) => {
       state.activeSlide = action.payload;
-      let activeData = state.data[state.activeSlide];
+      let activeData: any = state.data[state.activeSlide];
 
       state.temperatureScale
-        ? (state.temperature = activeData.temperatureInC)
-        : (state.temperature = activeData.temperatureInF);
+        ? (state.temperature = activeData.temperature.temperatureInC)
+        : (state.temperature = activeData.temperature.temperatureInF);
 
       state.date = convertDay(activeData.date);
     },

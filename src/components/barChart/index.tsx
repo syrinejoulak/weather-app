@@ -21,10 +21,11 @@ import useWindowSize from '../../hooks/useWindowSize';
 const BarChartContainer = () => {
   const size = useWindowSize();
   const storeData = useSelector((state: RootState) => state.weather.data);
+
   const data = storeData?.map((forcast: any) => {
     return {
       name: getWeekDay(forcast.date),
-      temperature: forcast.temperatureInC?.toFixed(2),
+      temperature: forcast?.temperature?.temperatureInC?.toFixed(2),
       humidity: forcast?.humidity,
     };
   });
