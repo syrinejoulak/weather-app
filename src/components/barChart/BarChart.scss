@@ -1,6 +1,18 @@
+@import '../../styles/mixins';
+
 .barchart-container {
   margin: 80px auto;
   text-align: center;
   width: 600px;
   height: 400px;
+
+  @include breakpoint(tablet) {
+    width: 500px;
+    height: 300px;
+  }
+
+  @include breakpoint(mobile) {
+    width: 340px;
+    height: 240px;
+  }
 }

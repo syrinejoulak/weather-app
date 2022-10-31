@@ -20,8 +20,6 @@ const ForcastSwiper = () => {
 
   const data = useSelector((state: RootState) => state.weather.data);
 
-  // console.log('first', data);
-
   const forcasts = data?.map((forcast: any, key: number) => (
     <SwiperSlide key={key}>
       {Object.keys(forcast).length === 0 ? (
@@ -46,7 +44,7 @@ const ForcastSwiper = () => {
         spaceBetween={0}
         modules={[Navigation]}
         navigation
-        centeredSlides={width > 599 ? true : false}
+        centeredSlides
         speed={1000}
         onActiveIndexChange={(swiper) =>
           dispatch(setActiveIndex(swiper.realIndex))
