@@ -2,8 +2,6 @@ import React from 'react';
 
 import { filteringWeatherMainData } from '../../utils/filteringData';
 
-import Card from '../UI/Card/Card';
-
 import './ForcastSwiper.scss';
 
 interface ForcastCardProps {
@@ -31,7 +29,7 @@ const ForcastCard = ({
   }
 
   return (
-    <Card className="forcast-card">
+    <div className="forcast-card">
       <div
         className={`card-bg card-${weatherDescription}`}
         data-testid="forcast-card"
@@ -56,7 +54,7 @@ const ForcastCard = ({
           {description?.charAt(0).toUpperCase() + description?.slice(1)}
         </div>
       </div>
-    </Card>
+    </div>
   );
 };
 
