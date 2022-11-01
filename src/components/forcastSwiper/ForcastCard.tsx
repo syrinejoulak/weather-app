@@ -32,7 +32,10 @@ const ForcastCard = ({
 
   return (
     <Card className="forcast-card">
-      <div className={`card-bg card-${weatherDescription}`}>
+      <div
+        className={`card-bg card-${weatherDescription}`}
+        data-testid="forcast-card"
+      >
         <div className={weatherDescription}></div>
       </div>
 
