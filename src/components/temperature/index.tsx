@@ -6,6 +6,7 @@ import { isHigh } from '../../utils/filteringData';
 import LoadingSpinner from '../UI/Spinner/LoadingSpinner';
 
 import './Temperature.scss';
+import TempertureContent from './TempertureContent';
 
 const Temperature = () => {
   const temperatureScale = useSelector(
@@ -33,9 +34,10 @@ const Temperature = () => {
             ) : (
               <FaTemperatureLow />
             )}
-            <div>
-              {Math.trunc(temperature)}&deg;{temperatureScale ? 'C' : 'F'}
-            </div>
+            <TempertureContent
+              temperature={12}
+              temperatureScale={temperatureScale}
+            />
           </Fragment>
         ) : (
           <LoadingSpinner />
