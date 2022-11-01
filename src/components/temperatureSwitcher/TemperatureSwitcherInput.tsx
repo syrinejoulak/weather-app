@@ -9,11 +9,12 @@ const TemperatureSwitcherInput = () => {
   const onHandleCheck = () => {
     dispatch(setTemperatureScale());
   };
+
   return (
     <input
       type="checkbox"
       className="checkbox"
-      id="checkbox-temp"
+      data-testid="checkbox-temp"
       onChange={onHandleCheck}
     />
   );
