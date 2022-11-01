@@ -35,7 +35,7 @@ const Temperature = () => {
               <FaTemperatureLow />
             )}
             <TempertureContent
-              temperature={12}
+              temperature={temperature}
               temperatureScale={temperatureScale}
             />
           </Fragment>
