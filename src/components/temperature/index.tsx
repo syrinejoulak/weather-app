@@ -10,7 +10,7 @@ import TempertureContent from './TempertureContent';
 
 const Temperature = () => {
   const temperatureScale = useSelector(
-    (state: RootState) => state.weather.temperatureScale
+    (state: RootState) => state.weather.isCelcius
   );
   const temperature = useSelector(
     (state: RootState) => state.weather.temperature

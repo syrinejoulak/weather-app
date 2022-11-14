@@ -16,7 +16,7 @@ export type DataType = {
 };
 
 interface WeatherState {
-  temperatureScale: boolean;
+  isCelcius: boolean;
   temperature: number | null;
   date: string;
   city: string;
@@ -25,7 +25,7 @@ interface WeatherState {
 }
 
 const initialState: WeatherState = {
-  temperatureScale: true,
+  isCelcius: true,
   temperature: null,
   date: '',
   city: 'Tunis',
@@ -38,12 +38,12 @@ export const weatherSlice = createSlice({
   initialState,
   reducers: {
     setTemperatureScale: (state) => {
-      state.temperatureScale = !state.temperatureScale;
+      state.isCelcius = !state.isCelcius;
 
       if (state.temperature) {
         state.temperature = convertCelciusAndFarenheit(
           state.temperature,
-          state.temperatureScale
+          state.isCelcius
         );
       }
     },
@@ -54,7 +54,7 @@ export const weatherSlice = createSlice({
       state.data = action.payload;
       let activeData: any = state.data[state.activeSlide];
 
-      state.temperatureScale
+      state.isCelcius
         ? (state.temperature = activeData?.temperature?.temperatureInC)
         : (state.temperature = activeData?.temperature?.temperatureInF);
 
@@ -64,7 +64,7 @@ export const weatherSlice = createSlice({
       state.activeSlide = action.payload;
       let activeData: any = state.data[state.activeSlide];
 
-      state.temperatureScale
+      state.isCelcius
         ? (state.temperature = activeData?.temperature?.temperatureInC)
         : (state.temperature = activeData?.temperature?.temperatureInF);
 
